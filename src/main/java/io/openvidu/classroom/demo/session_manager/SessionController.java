@@ -73,6 +73,8 @@ public class SessionController {
 		}
 		
 		JSONObject responseJson = new JSONObject();
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> Using URL: " + OPENVIDU_URL + ", SECRET: " + SECRET);
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> Session (cached) " + id_lesson + " : " + this.lessonIdSession.get(id_lesson));
 		
 		if(this.lessonIdSession.get(id_lesson) != null) {
 			// If there's already a valid sessionId for this lesson, not necessary to ask for a new one 
