@@ -22,9 +22,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		//Sample users
-		User user1 = new User("student1@gmail.com", "pass", "Student Imprudent", "ROLE_STUDENT");
-		User user2 = new User("student2@gmail.com", "pass", "Student Concludent", "ROLE_STUDENT");
-		User user3 = new User("teacher@gmail.com",  "pass", "Teacher Cheater", "ROLE_TEACHER");
+		User user1 = new User("student1@yahoo.com", "pass", "Student Carl", "ROLE_STUDENT");
+		User user2 = new User("student2@yahoo.com", "pass", "Student Kathy", "ROLE_STUDENT");
+		User user3 = new User("teacher@yahoo.com",  "pass", "Teacher Josh", "ROLE_TEACHER");
 		
 		//Saving users
 		userRepository.save(user1);
@@ -32,8 +32,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 		userRepository.save(user3);
 		
 		//Sample lessons
-		Lesson c1 = new Lesson("Lesson number 1", user3);
-		Lesson c2 = new Lesson("Lesson number 2", user3);
+		Lesson c1 = new Lesson("Lesson 1 - Algebra", user3);
+		Lesson c2 = new Lesson("Lesson 2 - Artificial Intelligence", user3);
 		
 		c1.getAttenders().add(user1);
 		c1.getAttenders().add(user2);

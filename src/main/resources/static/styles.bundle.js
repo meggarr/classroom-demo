@@ -1,6 +1,6 @@
 webpackJsonp([2,4],{
 
-/***/ 1165:
+/***/ 1166:
 /***/ (function(module, exports) {
 
 /*
@@ -253,7 +253,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 1184:
+/***/ 1185:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(625);
@@ -327,7 +327,7 @@ module.exports = function() {
 var content = __webpack_require__(853);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(1165)(content, {});
+var update = __webpack_require__(1166)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -375,5 +375,5 @@ exports.push([module.i, "* {\n  font-family: 'Exo 2', sans-serif;\n}\n\nhtml,\nb
 
 /***/ })
 
-},[1184]);
+},[1185]);
 //# sourceMappingURL=styles.bundle.js.map

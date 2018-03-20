@@ -9,7 +9,7 @@
   <header *ngIf="!isVideoSessionUrl()">
     <md-toolbar color="primary" class="mat-elevation-z6">
       <button md-button routerLink="/" id="navbar-logo">
-        OpenVidu Classroom Demo
+        Classroom Demo
       </button>
       <span class="fill-remaining-space"></span>
       <div *ngIf="authenticationService.isLoggedIn()" fxLayout="row" fxShow="false" fxShow.gt-sm>
@@ -29,6 +29,7 @@
 
   <footer *ngIf="!isVideoSessionUrl()" class="page-footer back-primary color-secondary mat-elevation-z5">
     <div class="container">
+      <!--
       <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutAlign.xs="start">
         <div fxFlex="50%" fxFlex.xs="100%">
           <h2>This is a sample application</h2>
@@ -54,6 +55,7 @@
           </div>
         </div>
       </div>
+      -->
     </div>
   </footer>
 

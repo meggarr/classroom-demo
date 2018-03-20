@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  URL_BACK: 'https://abc10.245.247.219:5000'
+  URL_BACK: window.location.origin
 };
