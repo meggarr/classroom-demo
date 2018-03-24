@@ -17,52 +17,53 @@ import org.springframework.stereotype.Component;
 import io.openvidu.classroom.demo.user.User;
 import io.openvidu.classroom.demo.user.UserComponent;
 import io.openvidu.classroom.demo.user.UserRepository;
+
 /**
  * This class is used to check http credentials against database data. Also it
  * is responsible to set database user info into userComponent, a session scoped
  * bean that holds session user information.
- * 
+ * <p>
  * NOTE: This class is not intended to be modified by app developer.
  */
 @Component
 public class UserRepositoryAuthProvider implements AuthenticationProvider {
 
-	@Autowired
-	private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
-	@Autowired
-	private UserComponent userComponent;
+  @Autowired
+  private UserComponent userComponent;
 
-	@Override
-	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+  @Override
+  public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
-		String username = authentication.getName();
-		String password = (String) authentication.getCredentials();
+    String username = authentication.getName();
+    String password = (String) authentication.getCredentials();
 
-		User user = userRepository.findByName(username);
+    User user = userRepository.findByName(username);
 
-		if (user == null) {
-			throw new BadCredentialsException("User not found");
-		}
+    if (user == null) {
+      throw new BadCredentialsException("User not found");
+    }
 
-		if (!new BCryptPasswordEncoder().matches(password, user.getPasswordHash())) {
+    if (!new BCryptPasswordEncoder().matches(password, user.getPasswordHash())) {
 
-			throw new BadCredentialsException("Wrong password");
-		} else {
+      throw new BadCredentialsException("Wrong password");
+    } else {
 
-			userComponent.setLoggedUser(user);
+      userComponent.setLoggedUser(user);
 
-			List<GrantedAuthority> roles = new ArrayList<>();
-			for (String role : user.getRoles()) {
-				roles.add(new SimpleGrantedAuthority(role));
-			}
+      List<GrantedAuthority> roles = new ArrayList<>();
+      for (String role : user.getRoles()) {
+        roles.add(new SimpleGrantedAuthority(role));
+      }
 
-			return new UsernamePasswordAuthenticationToken(username, password, roles);
-		}
-	}
+      return new UsernamePasswordAuthenticationToken(username, password, roles);
+    }
+  }
 
-	@Override
-	public boolean supports(Class<?> authenticationObject) {
-		return true;
-	}
+  @Override
+  public boolean supports(Class<?> authenticationObject) {
+    return true;
+  }
 }

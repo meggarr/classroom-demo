@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class NgrokConfiguration {
 
-	@Value("${openvidu.publicurl}")
-	private String openviduPublicUrl; // local, ngrok, FINAL_URL
+  @Value("${openvidu.publicurl}")
+  private String openviduPublicUrl; // local, ngrok, FINAL_URL
 
-	public String getOpenViduPublicUrl() {
-		return this.openviduPublicUrl;
-	}
+  public String getOpenViduPublicUrl() {
+    return this.openviduPublicUrl;
+  }
 
 }

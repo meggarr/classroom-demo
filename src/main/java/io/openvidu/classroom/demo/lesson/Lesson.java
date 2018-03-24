@@ -16,70 +16,72 @@ import io.openvidu.classroom.demo.user.User;
 
 @Entity
 public class Lesson {
-	
-	public interface SimpleCourseList {}
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonView(SimpleCourseList.class)
-	private long id;
-	
-	@JsonView(SimpleCourseList.class)
-	private String title;
 
-	@ManyToOne
-	private User teacher;
+  public interface SimpleCourseList {
+  }
 
-	@ManyToMany
-	private Set<User> attenders;
-	
-	public Lesson() {}
-	
-	public Lesson(String title, User teacher) {
-		this.title = title;
-		this.teacher = teacher;
-		this.attenders = new HashSet<>();
-	}
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @JsonView(SimpleCourseList.class)
+  private long id;
 
-	public long getId() {
-		return id;
-	}
+  @JsonView(SimpleCourseList.class)
+  private String title;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+  @ManyToOne
+  private User teacher;
 
-	public String getTitle() {
-		return title;
-	}
+  @ManyToMany
+  private Set<User> attenders;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+  public Lesson() {
+  }
 
-	public User getTeacher() {
-		return teacher;
-	}
+  public Lesson(String title, User teacher) {
+    this.title = title;
+    this.teacher = teacher;
+    this.attenders = new HashSet<>();
+  }
 
-	public void setTeacher(User teacher) {
-		this.teacher = teacher;
-	}
+  public long getId() {
+    return id;
+  }
 
-	public Set<User> getAttenders() {
-		return attenders;
-	}
+  public void setId(long id) {
+    this.id = id;
+  }
 
-	public void setAttenders(Set<User> attenders) {
-		this.attenders = attenders;
-	}
-	
-	//To make 'user.getLesson().remove(lesson)' possible
-	@Override
-	public boolean equals(Object other){
-	    if (other == null) return false;
-	    if (other == this) return true;
-	    if (!(other instanceof Lesson))return false;
-	    Lesson otherCourse = (Lesson)other;
-	    return (otherCourse.id == this.id);
-	}
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public User getTeacher() {
+    return teacher;
+  }
+
+  public void setTeacher(User teacher) {
+    this.teacher = teacher;
+  }
+
+  public Set<User> getAttenders() {
+    return attenders;
+  }
+
+  public void setAttenders(Set<User> attenders) {
+    this.attenders = attenders;
+  }
+
+  //To make 'user.getLesson().remove(lesson)' possible
+  @Override
+  public boolean equals(Object other) {
+    if (other == null) return false;
+    if (other == this) return true;
+    if (!(other instanceof Lesson)) return false;
+    Lesson otherCourse = (Lesson) other;
+    return (otherCourse.id == this.id);
+  }
 }

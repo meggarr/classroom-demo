@@ -14,35 +14,33 @@ import io.openvidu.classroom.demo.security.NgrokController;
 
 @SpringBootApplication
 @EnableWebSocket
-public class App
-{
-	public static void main( String[] args )
-    {
-		ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
-    	NgrokConfiguration ngrokConf = context.getBean(NgrokConfiguration.class);
-    	if (ngrokConf.getOpenViduPublicUrl().equals("ngrok")) {
-			try {
-				NgrokController ngrok = new NgrokController();
-				System.out.println();
-				System.out.println("        PUBLIC IP        ");
-				System.out.println("-------------------------");
-				System.out.println(ngrok.getNgrokAppUrl());
-				System.out.println("-------------------------");
-				System.out.println();
-			} catch (Exception e) {
-				System.out.println("   No ngrok connection   ");
-			}
-		}
+public class App {
+  public static void main(String[] args) {
+    ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
+    NgrokConfiguration ngrokConf = context.getBean(NgrokConfiguration.class);
+    if (ngrokConf.getOpenViduPublicUrl().equals("ngrok")) {
+      try {
+        NgrokController ngrok = new NgrokController();
+        System.out.println();
+        System.out.println("        PUBLIC IP        ");
+        System.out.println("-------------------------");
+        System.out.println(ngrok.getNgrokAppUrl());
+        System.out.println("-------------------------");
+        System.out.println();
+      } catch (Exception e) {
+        System.out.println("   No ngrok connection   ");
+      }
     }
-	
-	@Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*");
-            }
-        };
-    }
+  }
+
+  @Bean
+  public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurerAdapter() {
+      @Override
+      public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedOrigins("*");
+      }
+    };
+  }
 
 }

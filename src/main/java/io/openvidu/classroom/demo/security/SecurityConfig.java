@@ -16,8 +16,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * users stored in a Spring Data database.
  * URL Access Authorization: Access to http URLs depending on Authenticated
  * vs anonymous users and also based on user role.
- * 
- * 
+ * <p>
+ * <p>
  * NOTE: The only part of this class intended for app developer customization is
  * the method configureUrlAuthorization. App developer should
  * decide what URLs are accessible by what user role.
@@ -25,46 +25,46 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	public UserRepositoryAuthProvider userRepoAuthProvider;
+  @Autowired
+  public UserRepositoryAuthProvider userRepoAuthProvider;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
 
-		configureUrlAuthorization(http);
+    configureUrlAuthorization(http);
 
-		// Disable CSRF protection (it is difficult to implement with ng2)
-		http.csrf().disable();
+    // Disable CSRF protection (it is difficult to implement with ng2)
+    http.csrf().disable();
 
-		// Use Http Basic Authentication
-		http.httpBasic();
+    // Use Http Basic Authentication
+    http.httpBasic();
 
-		// Do not redirect when logout
-		http.logout().logoutSuccessHandler((rq, rs, a) -> {
-		});
-	}
+    // Do not redirect when logout
+    http.logout().logoutSuccessHandler((rq, rs, a) -> {
+    });
+  }
 
-	private void configureUrlAuthorization(HttpSecurity http) throws Exception {
+  private void configureUrlAuthorization(HttpSecurity http) throws Exception {
 
-		// APP: This rules have to be changed by app developer
+    // APP: This rules have to be changed by app developer
 
-		// URLs that need authentication to access to it
-		//Lessons API
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api-lessons/**").hasAnyRole("TEACHER", "STUDENT");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api-lessons/**").hasRole("TEACHER");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api-lessons/**").hasRole("TEACHER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api-lessons/**").hasRole("TEACHER");
-		
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api-sessions/**").authenticated();
-		
-		// Other URLs can be accessed without authentication
-		http.authorizeRequests().anyRequest().permitAll();
-	}
+    // URLs that need authentication to access to it
+    //Lessons API
+    http.authorizeRequests().antMatchers(HttpMethod.GET, "/api-lessons/**").hasAnyRole("TEACHER", "STUDENT");
+    http.authorizeRequests().antMatchers(HttpMethod.POST, "/api-lessons/**").hasRole("TEACHER");
+    http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api-lessons/**").hasRole("TEACHER");
+    http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api-lessons/**").hasRole("TEACHER");
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    http.authorizeRequests().antMatchers(HttpMethod.POST, "/api-sessions/**").authenticated();
 
-		// Database authentication provider
-		auth.authenticationProvider(userRepoAuthProvider);
-	}
+    // Other URLs can be accessed without authentication
+    http.authorizeRequests().anyRequest().permitAll();
+  }
+
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+    // Database authentication provider
+    auth.authenticationProvider(userRepoAuthProvider);
+  }
 }
