@@ -3,6 +3,11 @@
     <md-icon class="right-btn" (click)="toggleFullScreen()" [title]="'Fullscreen'">{{fullscreenIcon}}</md-icon>
     <md-icon class="right-btn" (click)="toggleLocalVideo()" [title]="'Toggle video'">{{videoIcon}}</md-icon>
     <md-icon class="right-btn" (click)="toggleLocalAudio()" [title]="'Toggle audio'">{{audioIcon}}</md-icon>
+    <md-icon class="right-btn"
+            (click)="toggleLocalRecorder()" [title]="'Toggle recorder'"
+            [style.color]="getRecorderColor()" [style.display]="authenticationService.isTeacher() ? '' : 'none'">
+      {{recordIcon}}
+    </md-icon>
     <h1>{{lesson?.title}}</h1>
 </div>
 <div id="publisher"></div>

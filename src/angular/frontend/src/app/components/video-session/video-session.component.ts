@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { OpenVidu, Session, Publisher } from 'openvidu-browser';
+import { OpenVidu, Session, Publisher, LocalRecorder } from 'openvidu-browser';
 
 import { VideoSessionService } from '../../services/video-session.service';
 import { AuthenticationService } from '../../services/authentication.service';
@@ -19,9 +19,12 @@ export class VideoSessionComponent implements OnInit {
     OV: OpenVidu;
     session: Session;
     publisher: Publisher;
+    recorder: LocalRecorder;
 
     sessionId: string;
     token: string;
+
+    isTeacher: boolean;
 
     cameraOptions: any;
 
@@ -29,6 +32,7 @@ export class VideoSessionComponent implements OnInit {
     localAudioActivated: boolean;
     videoIcon: string;
     audioIcon: string;
+    recordIcon: string;
     fullscreenIcon: string;
 
     constructor(
@@ -64,6 +68,7 @@ export class VideoSessionComponent implements OnInit {
             console.warn(event.stream);
         });
 
+
         this.session.on('connectionCreated', (event) => {
             if (event.connection.connectionId == this.session.connection.connectionId) {
                 console.warn("YOUR OWN CONNECTION CREATED!");
@@ -77,7 +82,6 @@ export class VideoSessionComponent implements OnInit {
             console.warn("OTHER USER'S CONNECTION DESTROYED!");
             console.warn(event.connection);
         });
-
 
 
         // 3) Connect to the session
@@ -100,6 +104,11 @@ export class VideoSessionComponent implements OnInit {
                     this.publisher.on('streamCreated', (event) => {
                         console.warn("STREAM CREATED BY PUBLISHER!");
                         console.warn(event.stream);
+
+                        if (this.authenticationService.isTeacher()) {
+                            console.warn("TEACHER HAS A RECORDER!");
+                            this.recorder = this.OV.initLocalRecorder(event.stream);
+                        }
                     })
 
                     // 5) Publish your stream
@@ -115,6 +124,8 @@ export class VideoSessionComponent implements OnInit {
 
 
     ngOnInit() {
+
+        this.isTeacher = this.authenticationService.isTeacher();
 
         // Specific aspects of this concrete application
         this.previousConnectionStuff();
@@ -183,6 +194,39 @@ export class VideoSessionComponent implements OnInit {
     toggleScrollPage(scroll: string) {
         let content = <HTMLElement>document.getElementsByClassName("mat-sidenav-content")[0];
         content.style.overflow = scroll;
+    }
+
+    getRecorderColor() {
+        if (this.recorder != null) {
+            if (this.recorder.state == "RECORDING" || this.recorder.state == "PAUSED") {
+                return "cyan";
+            }
+        }
+        return "white";
+    }
+
+    toggleLocalRecorder() {
+        if (this.recorder != null) {
+            if (this.recorder.state == "READY") {
+                console.warn("START RECORDING ...");
+                this.recorder.record();
+                this.recordIcon = "fiber_smart_record";
+            } else if (this.recorder.state == "RECORDING" || this.recorder.state == "PAUSED") {
+                console.warn("STOP RECORDING ...");
+                this.recorder.stop().then(() => {
+                    console.warn("STOPPED, recorder.state >" + this.recorder.state);
+                    this.recorder.download();
+                    this.recordIcon = "fiber_manual_record";
+                });
+            } else if (this.recorder.state == "FINISHED") {
+                console.warn("CLEAN THE RECORDER & RECORD");
+                this.recorder.clean();
+                this.recorder.record();
+                this.recordIcon = "fiber_smart_record";
+            }
+        } else {
+            console.warn("NONE RECORDER OBJECT");
+        }
     }
 
     toggleLocalVideo() {
@@ -254,6 +298,7 @@ export class VideoSessionComponent implements OnInit {
         this.localAudioActivated = this.cameraOptions.audio;
         this.videoIcon = this.localVideoActivated ? "videocam" : "videocam_off";
         this.audioIcon = this.localAudioActivated ? "mic" : "mic_off";
+        this.recordIcon = this.recorder != null && this.recorder.state == "RECORDING" ? "fiber_smart_record" : "fiber_manual_record";
         this.fullscreenIcon = "fullscreen";
     }
 

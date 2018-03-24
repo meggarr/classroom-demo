@@ -51,7 +51,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent(router, authenticationService) {
         this.router = router;
         this.authenticationService = authenticationService;
@@ -64,12 +64,13 @@ var AppComponent = (function () {
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _b) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object])
     ], AppComponent);
     return AppComponent;
     var _a, _b;
 }());
+
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -107,9 +108,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 
 
 
@@ -131,7 +129,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
@@ -165,11 +163,11 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_15__components_dashboard_join_session_dialog_component__["a" /* JoinSessionDialogComponent */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], AppModule);
     return AppModule;
 }());
+
 //# sourceMappingURL=app.module.js.map
 
 /***/ }),
@@ -245,7 +243,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AuthGuard = (function () {
+var AuthGuard = /** @class */ (function () {
     function AuthGuard(router, authenticationService) {
         this.router = router;
         this.authenticationService = authenticationService;
@@ -260,12 +258,13 @@ var AuthGuard = (function () {
         return false;
     };
     AuthGuard = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _b) || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object])
     ], AuthGuard);
     return AuthGuard;
     var _a, _b;
 }());
+
 //# sourceMappingURL=auth.guard.js.map
 
 /***/ }),
@@ -300,7 +299,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var DashboardComponent = (function () {
+var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(lessonService, videoSessionService, authenticationService, router, snackBar, dialog) {
         this.lessonService = lessonService;
         this.videoSessionService = videoSessionService;
@@ -379,12 +378,13 @@ var DashboardComponent = (function () {
             selector: 'app-dashboard',
             template: __webpack_require__("./src/app/components/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("./src/app/components/dashboard/dashboard.component.css")],
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services_lesson_service__["a" /* LessonService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_lesson_service__["a" /* LessonService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_video_session_service__["a" /* VideoSessionService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__services_video_session_service__["a" /* VideoSessionService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_6__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _e) || Object, (typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _f) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services_lesson_service__["a" /* LessonService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_lesson_service__["a" /* LessonService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_video_session_service__["a" /* VideoSessionService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_video_session_service__["a" /* VideoSessionService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === "function" && _f || Object])
     ], DashboardComponent);
     return DashboardComponent;
     var _a, _b, _c, _d, _e, _f;
 }());
+
 //# sourceMappingURL=dahsboard.component.js.map
 
 /***/ }),
@@ -419,7 +419,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var JoinSessionDialogComponent = (function () {
+var JoinSessionDialogComponent = /** @class */ (function () {
     function JoinSessionDialogComponent() {
         this.quality = 'medium';
         this.joinWithVideo = true;
@@ -469,11 +469,12 @@ var JoinSessionDialogComponent = (function () {
             selector: 'app-join-session-dialog',
             template: "\n        <div>\n            <h1 md-dialog-title>\n                Video options\n            </h1>\n            <form #dialogForm (ngSubmit)=\"joinSession()\">\n                <md-dialog-content>\n                    <div id=\"quality-div\">\n                        <h5>Quality</h5>\n                        <md-radio-group [(ngModel)]=\"quality\" name=\"quality\" id=\"quality\">\n                            <md-radio-button value='low' title=\"320x240\">Low</md-radio-button>\n                            <md-radio-button value='medium' title=\"640x480\">Medium</md-radio-button>\n                            <md-radio-button value='high' title=\"1280x720\">High</md-radio-button>\n                            <md-radio-button value='veryhigh' title=\"1920x1080\">Very high</md-radio-button>\n                        </md-radio-group>\n                    </div>\n                    <div id=\"join-div\">\n                        <h5>Enter with active...</h5>\n                        <md-checkbox [(ngModel)]=\"joinWithVideo\" name=\"joinWithVideo\" id=\"joinWithVideo\">Video</md-checkbox>\n                        <md-checkbox [(ngModel)]=\"joinWithAudio\" name=\"joinWithAudio\">Audio</md-checkbox>\n                    </div>\n                </md-dialog-content>\n                <md-dialog-actions>\n                    <button md-button md-dialog-close>CANCEL</button>\n                    <button md-button id=\"join-btn\" type=\"submit\">JOIN</button>\n                </md-dialog-actions>\n            </form>\n        </div>\n    ",
             styles: ["\n        #quality-div {\n            margin-top: 20px;\n        }\n        #join-div {\n            margin-top: 25px;\n            margin-bottom: 20px;\n        }\n        #quality-tag {\n            display: block;\n        }\n        h5 {\n            margin-bottom: 10px;\n            text-align: left;\n        }\n        #joinWithVideo {\n            margin-right: 50px;\n        }\n        md-dialog-actions {\n            display: block;\n        }\n        #join-btn {\n            float: right;\n        }\n    "],
-        }), 
-        __metadata('design:paramtypes', [])
+        }),
+        __metadata("design:paramtypes", [])
     ], JoinSessionDialogComponent);
     return JoinSessionDialogComponent;
 }());
+
 //# sourceMappingURL=join-session-dialog.component.js.map
 
 /***/ }),
@@ -508,7 +509,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ErrorMessageComponent = (function () {
+var ErrorMessageComponent = /** @class */ (function () {
     function ErrorMessageComponent() {
         this.eventShowable = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
     }
@@ -516,39 +517,40 @@ var ErrorMessageComponent = (function () {
         this.eventShowable.emit(false);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(), 
-        __metadata('design:type', String)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(),
+        __metadata("design:type", String)
     ], ErrorMessageComponent.prototype, "errorTitle", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(), 
-        __metadata('design:type', String)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(),
+        __metadata("design:type", String)
     ], ErrorMessageComponent.prototype, "errorContent", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(), 
-        __metadata('design:type', String)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(),
+        __metadata("design:type", String)
     ], ErrorMessageComponent.prototype, "customClass", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(), 
-        __metadata('design:type', Boolean)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(),
+        __metadata("design:type", Boolean)
     ], ErrorMessageComponent.prototype, "closable", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(), 
-        __metadata('design:type', Number)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* Input */])(),
+        __metadata("design:type", Number)
     ], ErrorMessageComponent.prototype, "timeable", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Output */])(), 
-        __metadata('design:type', Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Output */])(),
+        __metadata("design:type", Object)
     ], ErrorMessageComponent.prototype, "eventShowable", void 0);
     ErrorMessageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* Component */])({
             selector: 'app-error-message',
             template: __webpack_require__("./src/app/components/error-message/error-message.component.html"),
             styles: [__webpack_require__("./src/app/components/error-message/error-message.component.css")]
-        }), 
-        __metadata('design:paramtypes', [])
+        }),
+        __metadata("design:paramtypes", [])
     ], ErrorMessageComponent);
     return ErrorMessageComponent;
 }());
+
 //# sourceMappingURL=error-message.component.js.map
 
 /***/ }),
@@ -597,7 +599,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LessonDetailsComponent = (function () {
+var LessonDetailsComponent = /** @class */ (function () {
     function LessonDetailsComponent(lessonService, authenticationService, router, route, location, snackBar) {
         this.lessonService = lessonService;
         this.authenticationService = authenticationService;
@@ -755,12 +757,13 @@ var LessonDetailsComponent = (function () {
             selector: 'app-lesson-details',
             template: __webpack_require__("./src/app/components/lesson-details/lesson-details.component.html"),
             styles: [__webpack_require__("./src/app/components/lesson-details/lesson-details.component.css")],
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__services_lesson_service__["a" /* LessonService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_6__services_lesson_service__["a" /* LessonService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_7__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* Location */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* Location */]) === 'function' && _e) || Object, (typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdSnackBar */]) === 'function' && _f) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__services_lesson_service__["a" /* LessonService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_lesson_service__["a" /* LessonService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* Location */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdSnackBar */]) === "function" && _f || Object])
     ], LessonDetailsComponent);
     return LessonDetailsComponent;
     var _a, _b, _c, _d, _e, _f;
 }());
+
 //# sourceMappingURL=lesson-details.component.js.map
 
 /***/ }),
@@ -801,7 +804,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var PresentationComponent = (function () {
+var PresentationComponent = /** @class */ (function () {
     function PresentationComponent(authenticationService, userService, router) {
         this.authenticationService = authenticationService;
         this.userService = userService;
@@ -894,12 +897,13 @@ var PresentationComponent = (function () {
             selector: 'app-presentation',
             template: __webpack_require__("./src/app/components/presentation/presentation.component.html"),
             styles: [__webpack_require__("./src/app/components/presentation/presentation.component.css")]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service__["a" /* UserService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_user_service__["a" /* UserService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object])
     ], PresentationComponent);
     return PresentationComponent;
     var _a, _b, _c;
 }());
+
 //# sourceMappingURL=presentation.component.js.map
 
 /***/ }),
@@ -936,7 +940,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var ProfileComponent = (function () {
+var ProfileComponent = /** @class */ (function () {
     function ProfileComponent(authenticationService) {
         this.authenticationService = authenticationService;
     }
@@ -948,12 +952,13 @@ var ProfileComponent = (function () {
             selector: 'app-profile',
             template: __webpack_require__("./src/app/components/profile/profile.component.html"),
             styles: [__webpack_require__("./src/app/components/profile/profile.component.css")]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _a) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _a || Object])
     ], ProfileComponent);
     return ProfileComponent;
     var _a;
 }());
+
 //# sourceMappingURL=profile.component.js.map
 
 /***/ }),
@@ -968,7 +973,7 @@ module.exports = "h1 {\n  text-align: center;\n  margin: 0;\n  color: white;\n}\
 /***/ "./src/app/components/video-session/video-session.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"header-div\">\n    <md-icon id=\"back-btn\" (click)=\"location.back()\" [title]=\"'Back to lessons'\">keyboard_arrow_left</md-icon>\n    <md-icon class=\"right-btn\" (click)=\"toggleFullScreen()\" [title]=\"'Fullscreen'\">{{fullscreenIcon}}</md-icon>\n    <md-icon class=\"right-btn\" (click)=\"toggleLocalVideo()\" [title]=\"'Toggle video'\">{{videoIcon}}</md-icon>\n    <md-icon class=\"right-btn\" (click)=\"toggleLocalAudio()\" [title]=\"'Toggle audio'\">{{audioIcon}}</md-icon>\n    <h1>{{lesson?.title}}</h1>\n</div>\n<div id=\"publisher\"></div>\n<div id=\"subscriber\"></div>"
+module.exports = "<div id=\"header-div\">\n    <md-icon id=\"back-btn\" (click)=\"location.back()\" [title]=\"'Back to lessons'\">keyboard_arrow_left</md-icon>\n    <md-icon class=\"right-btn\" (click)=\"toggleFullScreen()\" [title]=\"'Fullscreen'\">{{fullscreenIcon}}</md-icon>\n    <md-icon class=\"right-btn\" (click)=\"toggleLocalVideo()\" [title]=\"'Toggle video'\">{{videoIcon}}</md-icon>\n    <md-icon class=\"right-btn\" (click)=\"toggleLocalAudio()\" [title]=\"'Toggle audio'\">{{audioIcon}}</md-icon>\n    <md-icon class=\"right-btn\"\n            (click)=\"toggleLocalRecorder()\" [title]=\"'Toggle recorder'\"\n            [style.color]=\"getRecorderColor()\" [style.display]=\"authenticationService.isTeacher() ? '' : 'none'\">\n      {{recordIcon}}\n    </md-icon>\n    <h1>{{lesson?.title}}</h1>\n</div>\n<div id=\"publisher\"></div>\n<div id=\"subscriber\"></div>\n"
 
 /***/ }),
 
@@ -997,7 +1002,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var VideoSessionComponent = (function () {
+var VideoSessionComponent = /** @class */ (function () {
     function VideoSessionComponent(location, authenticationService, videoSessionService) {
         this.location = location;
         this.authenticationService = authenticationService;
@@ -1053,6 +1058,10 @@ var VideoSessionComponent = (function () {
                     _this.publisher.on('streamCreated', function (event) {
                         console.warn("STREAM CREATED BY PUBLISHER!");
                         console.warn(event.stream);
+                        if (_this.authenticationService.isTeacher()) {
+                            console.warn("TEACHER HAS A RECORDER!");
+                            _this.recorder = _this.OV.initLocalRecorder(event.stream);
+                        }
                     });
                     // 5) Publish your stream
                     _this.session.publish(_this.publisher);
@@ -1065,6 +1074,7 @@ var VideoSessionComponent = (function () {
     };
     VideoSessionComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.isTeacher = this.authenticationService.isTeacher();
         // Specific aspects of this concrete application
         this.previousConnectionStuff();
         if (this.authenticationService.isTeacher()) {
@@ -1115,6 +1125,41 @@ var VideoSessionComponent = (function () {
     VideoSessionComponent.prototype.toggleScrollPage = function (scroll) {
         var content = document.getElementsByClassName("mat-sidenav-content")[0];
         content.style.overflow = scroll;
+    };
+    VideoSessionComponent.prototype.getRecorderColor = function () {
+        if (this.recorder != null) {
+            if (this.recorder.state == "RECORDING" || this.recorder.state == "PAUSED") {
+                return "cyan";
+            }
+        }
+        return "white";
+    };
+    VideoSessionComponent.prototype.toggleLocalRecorder = function () {
+        var _this = this;
+        if (this.recorder != null) {
+            if (this.recorder.state == "READY") {
+                console.warn("START RECORDING ...");
+                this.recorder.record();
+                this.recordIcon = "fiber_smart_record";
+            }
+            else if (this.recorder.state == "RECORDING" || this.recorder.state == "PAUSED") {
+                console.warn("STOP RECORDING ...");
+                this.recorder.stop().then(function () {
+                    console.warn("STOPPED, recorder.state >" + _this.recorder.state);
+                    _this.recorder.download();
+                    _this.recordIcon = "fiber_manual_record";
+                });
+            }
+            else if (this.recorder.state == "FINISHED") {
+                console.warn("CLEAN THE RECORDER & RECORD");
+                this.recorder.clean();
+                this.recorder.record();
+                this.recordIcon = "fiber_smart_record";
+            }
+        }
+        else {
+            console.warn("NONE RECORDER OBJECT");
+        }
     };
     VideoSessionComponent.prototype.toggleLocalVideo = function () {
         this.localVideoActivated = !this.localVideoActivated;
@@ -1190,6 +1235,7 @@ var VideoSessionComponent = (function () {
         this.localAudioActivated = this.cameraOptions.audio;
         this.videoIcon = this.localVideoActivated ? "videocam" : "videocam_off";
         this.audioIcon = this.localAudioActivated ? "mic" : "mic_off";
+        this.recordIcon = this.recorder != null && this.recorder.state == "RECORDING" ? "fiber_smart_record" : "fiber_manual_record";
         this.fullscreenIcon = "fullscreen";
     };
     VideoSessionComponent = __decorate([
@@ -1197,12 +1243,13 @@ var VideoSessionComponent = (function () {
             selector: 'app-video-session',
             template: __webpack_require__("./src/app/components/video-session/video-session.component.html"),
             styles: [__webpack_require__("./src/app/components/video-session/video-session.component.css")]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["e" /* Location */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_common__["e" /* Location */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_authentication_service__["a" /* AuthenticationService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_video_session_service__["a" /* VideoSessionService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_video_session_service__["a" /* VideoSessionService */]) === 'function' && _c) || Object])
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["e" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["e" /* Location */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_video_session_service__["a" /* VideoSessionService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_video_session_service__["a" /* VideoSessionService */]) === "function" && _c || Object])
     ], VideoSessionComponent);
     return VideoSessionComponent;
     var _a, _b, _c;
 }());
+
 //# sourceMappingURL=video-session.component.js.map
 
 /***/ }),
@@ -1212,13 +1259,14 @@ var VideoSessionComponent = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Lesson; });
-var Lesson = (function () {
+var Lesson = /** @class */ (function () {
     function Lesson(title) {
         this.title = title;
         this.attenders = [];
     }
     return Lesson;
 }());
+
 //# sourceMappingURL=lesson.js.map
 
 /***/ }),
@@ -1228,7 +1276,7 @@ var Lesson = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
-var User = (function () {
+var User = /** @class */ (function () {
     function User(u) {
         this.id = u.id;
         this.name = u.name;
@@ -1238,6 +1286,7 @@ var User = (function () {
     }
     return User;
 }());
+
 //# sourceMappingURL=user.js.map
 
 /***/ }),
@@ -1266,7 +1315,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AuthenticationService = (function () {
+var AuthenticationService = /** @class */ (function () {
     function AuthenticationService(http, router) {
         this.http = http;
         this.router = router;
@@ -1361,12 +1410,13 @@ var AuthenticationService = (function () {
         this.getCurrentUser().lessons = lessons;
     };
     AuthenticationService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === 'function' && _b) || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object])
     ], AuthenticationService);
     return AuthenticationService;
     var _a, _b;
 }());
+
 function utf8_to_b64(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
         return String.fromCharCode('0x' + p1);
@@ -1400,7 +1450,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LessonService = (function () {
+var LessonService = /** @class */ (function () {
     function LessonService(http, authenticationService) {
         this.http = http;
         this.authenticationService = authenticationService;
@@ -1482,12 +1532,13 @@ var LessonService = (function () {
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw('Server error (' + error.status + '): ' + error.text());
     };
     LessonService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */]) === 'function' && _b) || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object])
     ], LessonService);
     return LessonService;
     var _a, _b;
 }());
+
 //# sourceMappingURL=lesson.service.js.map
 
 /***/ }),
@@ -1512,7 +1563,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var UserService = (function () {
+var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
         this.url = 'api-users';
@@ -1533,12 +1584,13 @@ var UserService = (function () {
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw(error.status);
     };
     UserService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
     ], UserService);
     return UserService;
     var _a;
 }());
+
 //# sourceMappingURL=user.service.js.map
 
 /***/ }),
@@ -1565,7 +1617,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var VideoSessionService = (function () {
+var VideoSessionService = /** @class */ (function () {
     function VideoSessionService(http, authenticationService) {
         this.http = http;
         this.authenticationService = authenticationService;
@@ -1603,12 +1655,13 @@ var VideoSessionService = (function () {
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].throw('Server error (' + error.status + '): ' + error.text());
     };
     VideoSessionService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */]) === 'function' && _b) || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object])
     ], VideoSessionService);
     return VideoSessionService;
     var _a, _b;
 }());
+
 //# sourceMappingURL=video-session.service.js.map
 
 /***/ }),
