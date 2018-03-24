@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
+import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 
 import { Lesson } from '../../models/lesson';
 
@@ -28,8 +28,8 @@ export class DashboardComponent implements OnInit {
         private videoSessionService: VideoSessionService,
         private authenticationService: AuthenticationService,
         private router: Router,
-        public snackBar: MdSnackBar,
-        public dialog: MdDialog
+        public snackBar: MatSnackBar,
+        public dialog: MatDialog
     ) { }
 
     ngOnInit(): void {
@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
     }
 
     goToLesson(lesson: Lesson) {
-        let dialogRef: MdDialogRef<JoinSessionDialogComponent>;
+        let dialogRef: MatDialogRef<JoinSessionDialogComponent>;
         dialogRef = this.dialog.open(JoinSessionDialogComponent);
         dialogRef.componentInstance.myReference = dialogRef;
 

@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { routing } from './app.routing';
 
-import { MaterialModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
+//import { MaterialModule } from '@angular/material';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -40,8 +40,8 @@ import { AuthGuard } from './auth.guard';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
-    FlexLayoutModule.forRoot(),
+//    MaterialModule,
+//    FlexLayoutModule.forRoot(),
     routing,
   ],
   providers: [

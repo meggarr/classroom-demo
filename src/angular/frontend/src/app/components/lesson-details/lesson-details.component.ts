@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 import { Lesson } from '../../models/lesson';
 import { User } from '../../models/user';
@@ -39,7 +39,7 @@ export class LessonDetailsComponent implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private location: Location,
-        public snackBar: MdSnackBar
+        public snackBar: MatSnackBar
     ) { }
 
     ngOnInit(): void {

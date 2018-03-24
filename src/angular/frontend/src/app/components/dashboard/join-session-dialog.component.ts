@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
     selector: 'app-join-session-dialog',
@@ -60,7 +60,7 @@ import { MdDialogRef } from '@angular/material';
 })
 export class JoinSessionDialogComponent {
 
-    public myReference: MdDialogRef<JoinSessionDialogComponent>;
+    public myReference: MatDialogRef<JoinSessionDialogComponent>;
     private quality = 'medium';
     private joinWithVideo = true;
     private joinWithAudio = true;
